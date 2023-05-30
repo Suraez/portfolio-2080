@@ -36,12 +36,6 @@ module.exports = {
 				"gradient-radial":
 					"radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
 			},
-			animation: {
-				"fade-in": "fade-in 3s ease-in-out forwards",
-				title: "title 3s ease-out forwards",
-				"fade-left": "fade-left 3s ease-in-out forwards",
-				"fade-right": "fade-right 3s ease-in-out forwards",
-			},
 			keyframes: {
 				"fade-in": {
 					"0%": {
@@ -101,6 +95,23 @@ module.exports = {
 						opacity: "100%",
 					},
 				},
+				"fade-in-up": {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+				},
+			},
+			animation: {
+				"fade-in": "fade-in 3s ease-in-out forwards",
+				title: "title 3s ease-out forwards",
+				"fade-left": "fade-left 3s ease-in-out forwards",
+				"fade-right": "fade-right 3s ease-in-out forwards",
+				"fade-in-up": "fade-in-up 1s ease-in-out forwards",
 			},
 		}
 	},
