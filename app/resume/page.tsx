@@ -12,10 +12,7 @@ const ExperienceCard = (cardData: any) => {
         </div>
       </div>
       <div className="container w-11/12 text-zinc-300 animate-fade-in-up">
-        <FadeInSection>
-          <h4 className="text-xl animate-fade-in-up">{cardData.cardData.years}</h4>
-        </FadeInSection>
-
+        <h4 className="text-xl animate-fade-in-up">{cardData.cardData.years}</h4>
         <h3 className="text-4xl animate-fade-in-up">{cardData.cardData.title}</h3>
         <h4 className="text-2xl animate-fade-in-up">{cardData.cardData.location}</h4>
         <ul className="list-disc mt-4 text-lg animate-fade-in-up">

@@ -1,140 +1,137 @@
 import Link from "next/link";
 import React from "react";
-import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-import { Article } from "./article";
-import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
+import { Eye, ChevronsRight } from "lucide-react";
+import FadeInSection from "../components/fadeInUp";
 
-const redis = Redis.fromEnv();
+const projectData = [
+  {
+    id: 1,
+    name: "Nepali News Headline Generator",
+    description: `This project is about generating the news headline after giving seeding two or three words.
+      The dataset is scraped from the Nepal most popular news TV channel website Ekantipur which contains the 
+      headline of the news. And the word dictionary is build on top of the words present in those headlines.
+      The Model is deployed on the Streamlit for demo purposes.
+    `,
+    tags: ["NLP", "Deep Learning", "Tensorflow", "Text Generation", "Streamlit"],
+    demoURL: "https://nepali-generator.streamlit.app/",
+  },
+  {
+    id: 2,
+    name: "LIS Developer Image Classification",
+    description: `A simple image classification model that is trained on the custom dataset for detecting the developers at LIS Nepal Pvt. Ltd.`,
+    tags: ["Deep Learning", "Tensorflow", "Image Classification", "Streamlit"],
+    demoURL: "https://lis-dev.streamlit.app/",
+  },
+  {
+    id: 3,
+    name: "Speech Recognition System",
+    description: `A model which accepts recorded audio as input and output the words spoken
+     in the audio along with the metrics such as Word Error Rate (WER) and Character Error Rate(CER). We used transfer learning on the pre-trained model
+     provided by the Google - Transformers on the open source LibriSpeech Audio Dataset 
+     which has approximately of 1000 hours and is sampled at the rate of 16KHz.
+     `,
+    tags: ["Deep Learning", "Tensorflow", "Speech Recognition", "LibriSpeech Dataset"],
+    demoURL: "#",
+  },
+  {
+    id: 4,
+    name: "Mesla - A subtle clone of Stack Overflow",
+    description: `This was our minor project in the college senior years in which we used the most popular MERN stack to develop a web app which
+    can help students ask question related to their curriculum and get answers from the peers, seniors or teachers. It also had a fund raising feature
+    as we integrated the Nepal digital wallet - Khalti so that visitors who get their question answered can donate some amount like 10 or so.
+     `,
+    tags: ["Mongo DB", "Express", "React", "Node.js"],
+    demoURL: "#",
+  },
+  {
+    id: 5,
+    name: "Bookbytes - Buy & Sell Used Books",
+    description: `This was my own software engineering project in which i develop a web app that allowed students of my campus - Western Region Campus
+    to sell and buy used books and notes. Furthermore, it also provided free pdfs of all
+    faculties for the students to download. 
+    .
+     `,
+    tags: ["Express", "Handlebars", "MongoDB", "Node.js"],
+    demoURL: "#",
+  },
+];
 
-export const revalidate = 60;
 export default async function ProjectsPage() {
-	const views = (
-		await redis.mget<number[]>(
-			...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
-		)
-	).reduce((acc, v, i) => {
-		acc[allProjects[i].slug] = v ?? 0;
-		return acc;
-	}, {} as Record<string, number>);
+  return (
+    <div className="relative pb-16">
+      <Navigation />
+      <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+        <div className="max-w-2xl mx-auto lg:mx-0">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+            Projects
+          </h2>
+          <p className="mt-4 text-zinc-400">
+            Some of the projects listed below are college projects and some are on my own
+            time.
+          </p>
+        </div>
+        <div className="w-full h-px bg-blue-800" />
 
-	const featured = allProjects.find(
-		(project) => project.slug === "planetfall",
-	)!;
-	const top2 = allProjects.find((project) => project.slug === "envshare")!;
-	const top3 = allProjects.find((project) => project.slug === "qstash")!;
-	const sorted = allProjects
-		.filter((p) => p.published)
-		.filter(
-			(project) =>
-				project.slug !== featured.slug &&
-				project.slug !== top2.slug &&
-				project.slug !== top3.slug,
-		)
-		.sort(
-			(a, b) =>
-				new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-				new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-		);
+        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
+          {projectData.map((project) => {
+            return (
+              <FadeInSection>
+                <Card key={project.id}>
+                  <Link href={`/projects/${project.id}`}>
+                    <article className="flex-col space-y-3 relative h-full w-full p-4 md:p-8">
+                      <div className="flex justify-between gap-2 items-center">
+                        <div className="text-xs text-zinc-100">Apr 1, 2023</div>
+                        <span className="text-zinc-500 text-xs flex items-center gap-1">
+                          <Eye className="w-4 h-4" />2
+                        </span>
+                      </div>
 
-	return (
-		<div className="relative pb-16">
-			<Navigation />
-			<div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-				<div className="max-w-2xl mx-auto lg:mx-0">
-					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-						Projects
-					</h2>
-					<p className="mt-4 text-zinc-400">
-						Some of the projects are from work and some are on my own time.
-					</p>
-				</div>
-				<div className="w-full h-px bg-zinc-800" />
+                      <h2
+                        id="featured-post"
+                        className="mt-4 text-3xl font-bold  text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                      >
+                        {project?.name}
+                      </h2>
+                      <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                        {project?.description}
+                      </p>
 
-				<div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-					<Card>
-						<Link href={`/projects/${featured.slug}`}>
-							<article className="relative h-full w-full p-4 md:p-8">
-								<div className="flex justify-between gap-2 items-center">
-									<div className="text-xs text-zinc-100">
-										{featured.date ? (
-											<time dateTime={new Date(featured.date).toISOString()}>
-												{Intl.DateTimeFormat(undefined, {
-													dateStyle: "medium",
-												}).format(new Date(featured.date))}
-											</time>
-										) : (
-											<span>SOON</span>
-										)}
-									</div>
-									<span className="text-zinc-500 text-xs  flex items-center gap-1">
-										<Eye className="w-4 h-4" />{" "}
-										{Intl.NumberFormat("en-US", { notation: "compact" }).format(
-											views[featured.slug] ?? 0,
-										)}
-									</span>
-								</div>
+                      <Link
+                        href={project?.demoURL}
+                        className="flex items-center text-lg duration-200 text-zinc-400 hover:text-zinc-100"
+                      >
+                        Demo Link
+                        <ChevronsRight />
+                      </Link>
+                      <div className="flex space-x-2 items-center">
+                        <p className="text-white">Tags: </p>
+                        {/* Tags needs to be added here */}
+                        {project?.tags.map((tag) => {
+                          return (
+                            <div className="bg-blue-400 p-2 rounded-3xl" key={tag}>
+                              {tag}
+                            </div>
+                          );
+                        })}
+                      </div>
 
-								<h2
-									id="featured-post"
-									className="mt-4 text-3xl font-bold  text-zinc-100 group-hover:text-white sm:text-4xl font-display"
-								>
-									{featured.title}
-								</h2>
-								<p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-									{featured.description}
-								</p>
-								<div className="absolute bottom-4 md:bottom-8">
-								<p className="text-zinc-200 hover:text-zinc-50 hidden lg:block">
-										Read more <span aria-hidden="true">&rarr;</span>
-									</p>
-								</div>
-							</article>
-						</Link>
-					</Card>
+                      <div className="mt-2 bottom-4 md:bottom-8">
+                        <p className="text-zinc-200 hover:text-zinc-50 hidden lg:block">
+                          Read more <span aria-hidden="true">&rarr;</span>
+                        </p>
+                      </div>
+                    </article>
+                  </Link>
+                </Card>
+              </FadeInSection>
+            );
+          })}
 
-					<div className="flex flex-col w-full gap-8  mx-auto border-t border-gray-900/10  lg:mx-0  lg:border-t-0 ">
-						{[top2, top3].map((project) => (
-							<Card key={project.slug}>
-								<Article project={project} views={views[project.slug] ?? 0} />
-							</Card>
-						))}
-					</div>
-				</div>
-				<div className="hidden w-full h-px md:block bg-zinc-800" />
-
-				<div className="grid  grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-					<div className="grid grid-cols-1 gap-4">
-						{sorted
-							.filter((_, i) => i % 3 === 0)
-							.map((project) => (
-								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
-								</Card>
-							))}
-					</div>
-					<div className="grid grid-cols-1 gap-4">
-						{sorted
-							.filter((_, i) => i % 3 === 1)
-							.map((project) => (
-								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
-								</Card>
-							))}
-					</div>
-					<div className="grid grid-cols-1 gap-4">
-						{sorted
-							.filter((_, i) => i % 3 === 2)
-							.map((project) => (
-								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
-								</Card>
-							))}
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+          <div className="flex flex-col w-full gap-8  mx-auto border-t border-gray-900/10  lg:mx-0  lg:border-t-0 "></div>
+        </div>
+      </div>
+    </div>
+  );
 }

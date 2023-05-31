@@ -9,7 +9,7 @@ const FadeInSection = (props: { children: React.ReactNode }) => {
       entries.forEach((entry) => setVisible(entry.isIntersecting));
     });
     observer.observe(domRef.current);
-    return () => observer.unobserve(domRef.current!);
+    return () => observer.disconnect();
   }, []);
   return (
     <div className={`fade-in-section ${isVisible ? "is-visible" : ""}`} ref={domRef}>

@@ -1,6 +1,7 @@
 import "../global.css";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { Space_Grotesk } from "next/font/google";
 
 export const metadata: Metadata = {
   title: {
@@ -29,9 +30,11 @@ export const metadata: Metadata = {
   },
 };
 
+const space = Space_Grotesk({ subsets: ["latin"], weight: ["400"] });
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={space.className}>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
