@@ -7,6 +7,14 @@ const nextConfig = {
 		appDir: true,
 		mdxRs: true,
 	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'i.imgur.com',
+			},
+		]
+	}
 };
 
 export default withContentlayer(nextConfig);

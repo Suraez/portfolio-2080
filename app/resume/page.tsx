@@ -109,7 +109,7 @@ const awardRecord = [
     description: "Placed at 1st postion in Nepal Country.",
   },
   {
-    achievement: "Has 4227 rank on Hackerrank",
+    achievement: "4227 rank on Hackerrank",
     platform: "Hackerrank",
     description: "Id: oberais50",
   },
