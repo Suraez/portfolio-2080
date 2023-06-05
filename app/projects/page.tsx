@@ -78,13 +78,13 @@ export default async function ProjectsPage() {
               <FadeInSection>
                 <Card key={project.id}>
                   <Link href={`/projects/${project.id}`}>
-                    <article className="flex-col space-y-3 relative h-full w-full p-4 md:p-8">
-                      <div className="flex justify-between gap-2 items-center">
+                    <div className="flex-col space-y-3 relative h-full w-full p-4 md:p-8">
+                      {/* <div className="flex justify-between gap-2 items-center">
                         <div className="text-xs text-zinc-100">Apr 1, 2023</div>
                         <span className="text-zinc-500 text-xs flex items-center gap-1">
                           <Eye className="w-4 h-4" />2
                         </span>
-                      </div>
+                      </div> */}
 
                       <h2
                         id="featured-post"
@@ -105,12 +105,11 @@ export default async function ProjectsPage() {
                       </Link>
                       <div className="flex space-x-2 items-center">
                         <p className="text-white">Tags: </p>
-                        {/* Tags needs to be added here */}
                         {project?.tags.map((tag) => {
                           return (
-                            <div className="bg-blue-400 p-2 rounded-3xl" key={tag}>
+                            <span className="bg-blue-400 p-2 rounded-3xl" key={tag}>
                               {tag}
-                            </div>
+                            </span>
                           );
                         })}
                       </div>
@@ -120,7 +119,7 @@ export default async function ProjectsPage() {
                           Read more <span aria-hidden="true">&rarr;</span>
                         </p>
                       </div>
-                    </article>
+                    </div>
                   </Link>
                 </Card>
               </FadeInSection>

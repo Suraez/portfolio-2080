@@ -2,10 +2,12 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const [isIntersecting, setIntersecting] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -48,9 +50,10 @@ export const Navigation: React.FC = () => {
             </Link>
           </div>
 
-          <Link href="/" className="duration-200 text-zinc-300 hover:text-zinc-100">
-            <ArrowLeft className="w-6 h-6 " />
-          </Link>
+          <ArrowLeft
+            className="w-6 h-6 text-white hover:cursor-pointer"
+            onClick={() => router.back()}
+          />
         </div>
       </div>
     </header>
