@@ -59,13 +59,13 @@ const projectData = [
 
 export default async function ProjectsPage() {
   return (
-    <div className="relative pb-16">
+    <div className="relative pb-16 mt-12">
       <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="max-w-2xl mx-auto lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+        <div className="w-full mx-auto lg:mx-0">
+          <h2 className="text-base md:text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Projects
           </h2>
-          <p className="mt-4 text-zinc-400">
+          <p className="mt-4 text-zinc-400 text-sm md:text-2xl">
             Some of the projects listed below are college projects and some are on my own
             time.
           </p>
@@ -88,26 +88,29 @@ export default async function ProjectsPage() {
 
                       <h2
                         id="featured-post"
-                        className="mt-4 text-3xl font-bold  text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                        className="mt-4 text-base md:text-2xl font-bold  text-zinc-100 group-hover:text-white sm:text-4xl font-display"
                       >
                         {project?.name}
                       </h2>
-                      <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                      <p className="text-sm md:text-xl mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                         {project?.description}
                       </p>
 
                       <Link
                         href={project?.demoURL}
-                        className="flex items-center text-lg duration-200 text-zinc-400 hover:text-zinc-100"
+                        className="text-sm md:text-xl flex items-center duration-200 text-zinc-400 hover:text-zinc-100"
                       >
                         Demo Link
                         <ChevronsRight />
                       </Link>
                       <div className="flex space-x-2 items-center">
-                        <p className="text-white">Tags: </p>
+                        <p className="text-white text-sm md:text-xl">Tags: </p>
                         {project?.tags.map((tag) => {
                           return (
-                            <span className="bg-blue-400 p-2 rounded-3xl" key={tag}>
+                            <span
+                              className="bg-blue-400 p-2 rounded-3xl text-sm md:text-xl"
+                              key={tag}
+                            >
                               {tag}
                             </span>
                           );

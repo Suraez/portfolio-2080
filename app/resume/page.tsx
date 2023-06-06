@@ -5,17 +5,23 @@ import { Card } from "../components/card";
 import FadeInSection from "../components/fadeInUp";
 const ExperienceCard = (cardData: any) => {
   return (
-    <div className="flex container p-4">
-      <div className="container w-1/12">
-        <div className="container h-20 w-20 bg-white rounded-full flex justify-center items-center">
+    <div className="flex flex-col md:flex-row p-4">
+      <div className="w-full md:w-1/12">
+        <div className="h-20 w-20 mx-auto bg-white rounded-full flex justify-center items-center">
           <Briefcase size="52" color="black" />
         </div>
       </div>
-      <div className="container w-11/12 text-zinc-300 animate-fade-in-up">
-        <h4 className="text-xl animate-fade-in-up">{cardData.cardData.years}</h4>
-        <h3 className="text-4xl animate-fade-in-up">{cardData.cardData.title}</h3>
-        <h4 className="text-2xl animate-fade-in-up">{cardData.cardData.location}</h4>
-        <ul className="list-disc mt-4 text-lg animate-fade-in-up">
+      <div className="container w-11/12 text-zinc-300 animate-fade-in-up mt-2">
+        <h4 className="text-base md:text-xl animate-fade-in-up text-center md:text-left">
+          {cardData.cardData.years}
+        </h4>
+        <h3 className="text-xl md:text-4xl animate-fade-in-up text-center md:text-left">
+          {cardData.cardData.title}
+        </h3>
+        <h4 className="text-base md:text-2xl animate-fade-in-up text-center md:text-left">
+          {cardData.cardData.location}
+        </h4>
+        <ul className="list-disc mt-4 text-sm md:text-lg animate-fade-in-up">
           {cardData.cardData.responsilities.map((res: any) => (
             <li key={res}>{res}</li>
           ))}
@@ -27,17 +33,25 @@ const ExperienceCard = (cardData: any) => {
 
 const AcademicCard = (academicDetails: any) => {
   return (
-    <div className="flex container p-4">
-      <div className="container w-1/12">
-        <div className="container h-20 w-20 bg-white rounded-full flex justify-center items-center">
+    <div className="flex flex-col md:flex-row p-4">
+      <div className="w-full md:w-1/12">
+        <div className="h-20 w-20 mx-auto bg-white rounded-full flex justify-center items-center">
           <BookOpen size="52" color="black" />
         </div>
       </div>
-      <div className="container w-11/12 text-zinc-300">
-        <h4 className="text-xl">{academicDetails.academicDetails.year}</h4>
-        <h3 className="text-4xl">{academicDetails.academicDetails.board}</h3>
-        <h4 className="text-2xl">{academicDetails.academicDetails.name}</h4>
-        <h4 className="text-lg">Grade: {academicDetails.academicDetails.grade} / 100%</h4>
+      <div className="w-full md:w-11/12 text-zinc-300 animate-fade-in-up">
+        <h4 className="text-base md:text-xl animate-fade-in-up text-center md:text-left">
+          {academicDetails.academicDetails.year}
+        </h4>
+        <h3 className="text-xl md:text-4xl animate-fade-in-up text-center md:text-left">
+          {academicDetails.academicDetails.board}
+        </h3>
+        <h4 className="text-base md:text-2xl animate-fade-in-up text-center md:text-left">
+          {academicDetails.academicDetails.name}
+        </h4>
+        <h4 className="list-disc mt-4 text-sm md:text-lg animate-fade-in-up text-center md:text-left">
+          Grade: {academicDetails.academicDetails.grade} / 100%
+        </h4>
       </div>
     </div>
   );
@@ -45,16 +59,22 @@ const AcademicCard = (academicDetails: any) => {
 
 const AwardRecord = (awardDetails: any) => {
   return (
-    <div className="flex container p-4">
-      <div className="container w-1/12">
-        <div className="container h-20 w-20 bg-white rounded-full flex justify-center items-center">
+    <div className="flex flex-col md:flex-row p-4">
+      <div className="w-full md:w-1/12">
+        <div className="h-20 w-20 mx-auto bg-white rounded-full flex justify-center items-center">
           <Medal size="52" color="black" />
         </div>
       </div>
-      <div className="container w-11/12 text-zinc-300">
-        <h4 className="text-4xl">{awardDetails.awardDetails.achievement}</h4>
-        <h3 className="text-2xl">{awardDetails.awardDetails.platform}</h3>
-        <h4 className="text-xl">{awardDetails.awardDetails.description}</h4>
+      <div className="w-full md:w-11/12 text-zinc-300 animate-fade-in-up">
+        <h4 className="text-base md:text-xl animate-fade-in-up text-center md:text-left">
+          {awardDetails.awardDetails.achievement}
+        </h4>
+        <h3 className="text-base md:text-2xl animate-fade-in-up text-center md:text-left">
+          {awardDetails.awardDetails.platform}
+        </h3>
+        <h4 className="text-base md:text-xl animate-fade-in-up text-center md:text-left">
+          {awardDetails.awardDetails.description}
+        </h4>
       </div>
     </div>
   );
@@ -120,23 +140,21 @@ const Resume = () => {
     <div className="relative pb-16 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
       {/* experiences section */}
-      <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+      <div className="p-4 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Experiences
           </h2>
         </div>
         <hr />
-        <div className="container">
-          <Card>
-            <ExperienceCard cardData={cardData} />
-          </Card>
-        </div>
+        <Card>
+          <ExperienceCard cardData={cardData} />
+        </Card>
       </div>
 
       {/* Education Section */}
       <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="max-w-2xl mx-auto lg:mx-0 animate-fade-in-up">
+        <div className="mx-auto lg:mx-0 animate-fade-in-up">
           <FadeInSection>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
               Education
@@ -144,19 +162,17 @@ const Resume = () => {
           </FadeInSection>
         </div>
         <hr />
-        <div className="container">
-          {academicRecord.map((record) => {
-            return (
-              <div className="mt-4" key={record.name}>
-                <FadeInSection>
-                  <Card>
-                    <AcademicCard academicDetails={record} />;
-                  </Card>
-                </FadeInSection>
-              </div>
-            );
-          })}
-        </div>
+        {academicRecord.map((record) => {
+          return (
+            <div className="mt-4" key={record.name}>
+              <FadeInSection>
+                <Card>
+                  <AcademicCard academicDetails={record} />;
+                </Card>
+              </FadeInSection>
+            </div>
+          );
+        })}
       </div>
 
       {/* Awards section */}
@@ -167,19 +183,17 @@ const Resume = () => {
           </h2>
         </div>
         <hr />
-        <div className="container">
-          {awardRecord.map((record) => {
-            return (
-              <FadeInSection key={record.achievement}>
-                <div className="mt-4" key={record.achievement}>
-                  <Card>
-                    <AwardRecord awardDetails={record} />;
-                  </Card>
-                </div>
-              </FadeInSection>
-            );
-          })}
-        </div>
+        {awardRecord.map((record) => {
+          return (
+            <FadeInSection key={record.achievement}>
+              <div className="mt-4" key={record.achievement}>
+                <Card>
+                  <AwardRecord awardDetails={record} />;
+                </Card>
+              </div>
+            </FadeInSection>
+          );
+        })}
       </div>
 
       {/* Tools & technologies */}
