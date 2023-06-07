@@ -10,13 +10,15 @@ const NepaliNews = () => {
     setShowBlockQuote(true);
   }, []);
   return (
-    <div className="container m-36">
-      <h3 className="text-white text-4xl mb-10">Nepali News Headline Generator</h3>
-      <hr className="bg-white w-1/2" />
+    <div className="relative mt-36">
+      <div className="head px-10">
+        <h3 className="text-white text-md md:text-4xl">Nepali News Headline Generator</h3>
+        <hr className="bg-white md:w-3/4" />
+      </div>
       {/* 1st row */}
-      <div className="flex mt-10">
-        <div className="description w-1/2 flex items-center p-5">
-          <p className="text-2xl">
+      <div className="md:flex md:m-32 md:mt-12">
+        <div className="flex flex-col px-5">
+          <p className="text-sm md:text-xl">
             A NLP text generation model in Nepali language. For the dataset, I scraped the
             100 headlines from the official Ekantipur website and then built a word
             dictionary by tokeinzing them. Each headline is converted into sequence and
@@ -26,32 +28,34 @@ const NepaliNews = () => {
             generate the learned words. Since, the dataset is extremely small, the metrics
             are:
           </p>
-          <ul>
+          <ul className="text-white text-sm md:text-xl">
             <li>Accuracy: 1.0000</li>
             <li>Val Accuracy: 0.0000e+00</li>
             <li>Loss: 0.4187</li>
             <li>Val Loss: 8.6558</li>
           </ul>
-          Future Work: Increase the text corpus by 10x, Redefine the Model Architecture.
+          <p className="text-sm md:text-xl">
+            Future Work: Increase the text corpus by 10x, Redefine the Model Architecture.
+          </p>
         </div>
         {showBlockQuote && (
-          <>
+          <div className="flex justify-center">
             <blockquote className="imgur-embed-pub" lang="en" data-id="6JBK6ZF">
-              <Link href="//imgur.com/6JBK6ZF">Neapli News Headline Generator</Link>
+              <Link href="//imgur.com/6JBK6ZF"></Link>
             </blockquote>
             <script async src="//s.imgur.com/min/embed.js"></script>
-          </>
+          </div>
         )}
       </div>
 
-      <div className="container mt-10">
-        <h5>
+      <div className="md:m-32 md:mt-12">
+        <h5 className="text-sm md:text-xl">
           Demo URL{" "}
           <Link href="https://nepali-generator.streamlit.app/">
             https://nepali-generator.streamlit.app/
           </Link>
         </h5>
-        <h4>
+        <h4 className="text-sm md:text-xl">
           Repo URL:{" "}
           <Link href="https://github.com/Suraez/nepali-text-generator">
             https://github.com/Suraez/nepali-text-generator
@@ -60,7 +64,7 @@ const NepaliNews = () => {
       </div>
 
       {/* 2nd row */}
-      <div className="flex mt-10">
+      <div className="flex md:m-32 md:mt-12">
         <div className="flex-col loss p-5 space-y-4">
           <h3>Loss & Accuracy Plot: </h3>
           <hr className="bg-white" />

@@ -6,6 +6,13 @@ import FadeInSection from "../components/fadeInUp";
 
 const projectData = [
   {
+    id: 2,
+    name: "LIS Developer Image Classification",
+    description: `A simple image classification model that is trained on the custom dataset for detecting the developers at LIS Nepal Pvt. Ltd.`,
+    tags: ["Deep Learning", "Tensorflow", "Image Classification", "Streamlit"],
+    demoURL: "https://lis-dev.streamlit.app/",
+  },
+  {
     id: 1,
     name: "Nepali News Headline Generator",
     description: `This project is about generating the news headline after giving seeding two or three words.
@@ -15,13 +22,6 @@ const projectData = [
     `,
     tags: ["NLP", "Deep Learning", "Tensorflow", "Text Generation", "Streamlit"],
     demoURL: "https://nepali-generator.streamlit.app/",
-  },
-  {
-    id: 2,
-    name: "LIS Developer Image Classification",
-    description: `A simple image classification model that is trained on the custom dataset for detecting the developers at LIS Nepal Pvt. Ltd.`,
-    tags: ["Deep Learning", "Tensorflow", "Image Classification", "Streamlit"],
-    demoURL: "https://lis-dev.streamlit.app/",
   },
   {
     id: 3,
@@ -36,13 +36,13 @@ const projectData = [
   },
   {
     id: 4,
-    name: "Mesla - A subtle clone of Stack Overflow",
+    name: "Mesla - A clone of Stack Overflow",
     description: `This was our minor project in the college senior years in which we used the most popular MERN stack to develop a web app which
     can help students ask question related to their curriculum and get answers from the peers, seniors or teachers. It also had a fund raising feature
     as we integrated the Nepal digital wallet - Khalti so that visitors who get their question answered can donate some amount like 10 or so.
      `,
     tags: ["Mongo DB", "Express", "React", "Node.js"],
-    demoURL: "#",
+    demoURL: "https://mesla.onrender.com/",
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const projectData = [
     .
      `,
     tags: ["Express", "Handlebars", "MongoDB", "Node.js"],
-    demoURL: "#",
+    demoURL: "https://bookbytes.onrender.com/",
   },
 ];
 
@@ -103,12 +103,12 @@ export default async function ProjectsPage() {
                         Demo Link
                         <ChevronsRight />
                       </Link>
-                      <div className="flex space-x-2 items-center">
+                      <div className="flex space-x-2 items-center flex-wrap">
                         <p className="text-white text-sm md:text-xl">Tags: </p>
                         {project?.tags.map((tag) => {
                           return (
                             <span
-                              className="bg-blue-400 p-2 rounded-3xl text-sm md:text-xl"
+                              className="bg-blue-400 p-2 rounded-3xl text-sm font-semibold text-stone-800 m-1"
                               key={tag}
                             >
                               {tag}

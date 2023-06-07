@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Software engineer at LIS Nepal Pvt. Ltd.",
   openGraph: {
     title: "surajkumarojha.com.np",
-    description: "Software engineer at upstash.com and founder of planetfall.io",
+    description: "Software engineer at LIS Nepal Pvt. Ltd.",
     url: "https://surajkumarojha.com.np",
     siteName: "surajkumarojha.com.np",
     locale: "en-US",
