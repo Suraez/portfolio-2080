@@ -251,7 +251,7 @@ const Resume = () => {
           </h2>
         </div>
         <hr />
-        <div className="circle flex flex-col md:flex-row">
+        {/* <div className="circle flex flex-col md:flex-row">
           {circularArray.map((ele) => (
             <div className="m-12 md:w-1/3" key={ele.name}>
               <Card>
@@ -269,7 +269,7 @@ const Resume = () => {
               </Card>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="line flex flex-col md:flex-row justify-around">
           <div className="first-col md:w-1/2">
