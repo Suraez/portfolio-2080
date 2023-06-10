@@ -135,6 +135,52 @@ const awardRecord = [
   },
 ];
 
+const circularArray = [
+  {
+    name: "Node.js",
+    score: 80,
+  },
+  {
+    name: "Laravel",
+    score: 70,
+  },
+  {
+    name: "Deep Learning",
+    score: 50,
+  },
+];
+
+const lineArray = [
+  {
+    name: "HTML5",
+    score: 80,
+  },
+  {
+    name: "CSS3",
+    score: 60,
+  },
+  {
+    name: "Bootstrap 4",
+    score: 75,
+  },
+  {
+    name: "React.js",
+    score: 80,
+  },
+  {
+    name: "Material UI",
+    score: 40,
+  },
+  {
+    name: "Flutter",
+    score: 40,
+  },
+  {
+    name: "Docker",
+    score: 60,
+  },
+];
+
 const Resume = () => {
   return (
     <div className="relative pb-16 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
@@ -196,7 +242,78 @@ const Resume = () => {
         })}
       </div>
 
-      {/* Tools & technologies */}
+      {/* Skills */}
+
+      <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+        <div className="max-w-2xl mx-auto lg:mx-0">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+            Skills
+          </h2>
+        </div>
+        <hr />
+        <div className="circle flex flex-col md:flex-row">
+          {circularArray.map((ele) => (
+            <div className="m-12 md:w-1/3" key={ele.name}>
+              <Card>
+                <div className="flex flex-col space-y-4 items-center p-12">
+                  <span className="text-xs font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+                    {ele.name}
+                  </span>
+                  <div
+                    className="radial-progress bg-info text-info-content border-4 border-info"
+                    style={{ "--value": `${ele.score}` }}
+                  >
+                    {ele.score + "%"}
+                  </div>
+                </div>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div className="line flex flex-col md:flex-row justify-around">
+          <div className="first-col md:w-1/2">
+            {lineArray.slice(0, Math.ceil(lineArray.length / 2)).map((ele) => (
+              <div className="m-2">
+                <div className="label flex flex-row justify-between">
+                  <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+                    {ele.name}
+                  </span>
+                  <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+                    {ele.score + "%"}
+                  </span>
+                </div>
+                <progress
+                  className="progress progress-info w-100"
+                  value={ele.score}
+                  max="100"
+                ></progress>
+              </div>
+            ))}
+          </div>
+          <div className="second-col md:w-1/2">
+            {lineArray
+              .slice(Math.ceil(lineArray.length / 2), lineArray.length)
+              .map((ele) => (
+                <div className="m-4">
+                  <div className="label flex flex-row justify-between">
+                    <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+                      {ele.name}
+                    </span>
+                    <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+                      {ele.score + "%"}
+                    </span>
+                  </div>
+                  <progress
+                    className="progress progress-info w-100"
+                    value={ele.score}
+                    max="100"
+                  ></progress>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
