@@ -92,23 +92,23 @@ export default async function ProjectsPage() {
                       >
                         {project?.name}
                       </h2>
-                      <p className="text-sm md:text-xl mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                      <p className="text-sm md:text-base mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                         {project?.description}
                       </p>
 
                       <Link
                         href={project?.demoURL}
-                        className="text-sm md:text-xl flex items-center duration-200 text-zinc-400 hover:text-zinc-100"
+                        className="text-sm md:text-base flex items-center duration-200 text-zinc-400 hover:text-zinc-100"
                       >
                         Demo Link
                         <ChevronsRight />
                       </Link>
                       <div className="flex space-x-2 items-center flex-wrap">
-                        <p className="text-white text-sm md:text-xl">Tags: </p>
+                        <p className="text-white text-sm md:text-base">Tags: </p>
                         {project?.tags.map((tag) => {
                           return (
                             <span
-                              className="bg-blue-400 p-2 rounded-3xl text-sm font-semibold text-stone-800 m-1"
+                              className="bg-blue-400 p-2 rounded-3xl text-xs md:text-sm font-semibold text-stone-800 m-1"
                               key={tag}
                             >
                               {tag}
@@ -118,7 +118,7 @@ export default async function ProjectsPage() {
                       </div>
 
                       <div className="mt-2 bottom-4 md:bottom-8">
-                        <p className="text-zinc-200 hover:text-zinc-50 hidden lg:block">
+                        <p className="text-zinc-200 hover:text-zinc-50 hidden lg:block text-sm md:text-base">
                           Read more <span aria-hidden="true">&rarr;</span>
                         </p>
                       </div>

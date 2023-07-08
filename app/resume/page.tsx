@@ -1,8 +1,9 @@
 import React from "react";
 import { Navigation } from "../components/nav";
-import { Briefcase, BookOpen, Medal } from "lucide-react";
+import { Briefcase, BookOpen, Medal, Download } from "lucide-react";
 import { Card } from "../components/card";
 import FadeInSection from "../components/fadeInUp";
+import Link from "next/link";
 const ExperienceCard = (cardData: any) => {
   return (
     <div className="flex flex-col md:flex-row p-4">
@@ -160,16 +161,8 @@ const lineArray = [
     score: 60,
   },
   {
-    name: "Bootstrap 4",
-    score: 75,
-  },
-  {
     name: "React.js",
     score: 80,
-  },
-  {
-    name: "Material UI",
-    score: 40,
   },
   {
     name: "Flutter",
@@ -177,6 +170,18 @@ const lineArray = [
   },
   {
     name: "Docker",
+    score: 60,
+  },
+  {
+    name: "Kubernetes",
+    score: 50,
+  },
+  {
+    name: "ELK stack (Data Visualization)",
+    score: 50,
+  },
+  {
+    name: "Tensorflow 2.0",
     score: 60,
   },
 ];
@@ -187,10 +192,23 @@ const Resume = () => {
       <Navigation />
       {/* experiences section */}
       <div className="p-4 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="max-w-2xl mx-auto lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-            Experiences
-          </h2>
+        <div className="head flex justify-between">
+          <div className="max-w-2xl mx-auto lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+              Experiences
+            </h2>
+          </div>
+          <button className="bg-info py-2 px-4 text-black">
+            <Link
+              href="https://drive.google.com/uc?export=download&id=12Im6giL7hD3aqVeHjjfu5k1wdx5O6lYx"
+              target="_blank"
+            >
+              <div className="download flex space-x-2">
+                <Download size="22" color="black" />
+                <span>MY RESUME</span>
+              </div>
+            </Link>
+          </button>
         </div>
         <hr />
         <Card>
@@ -271,47 +289,24 @@ const Resume = () => {
           ))}
         </div> */}
 
-        <div className="line flex flex-col md:flex-row justify-around">
-          <div className="first-col md:w-1/2">
-            {lineArray.slice(0, Math.ceil(lineArray.length / 2)).map((ele) => (
-              <div className="m-2">
-                <div className="label flex flex-row justify-between">
-                  <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
-                    {ele.name}
-                  </span>
-                  <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
-                    {ele.score + "%"}
-                  </span>
-                </div>
-                <progress
-                  className="progress progress-info w-100"
-                  value={ele.score}
-                  max="100"
-                ></progress>
+        <div className="line flex flex-wrap flex-col md:flex-row">
+          {lineArray.map((ele) => (
+            <div className="m-2 md:w-96">
+              <div className="label flex flex-row justify-between">
+                <span className="text-sm font-medium duration-150 lg:text-xl text-zinc-200 group-hover:text-white font-display">
+                  {ele.name}
+                </span>
+                <span className="text-sm font-medium duration-150 lg:text-xl text-zinc-200 group-hover:text-white font-display">
+                  {ele.score + "%"}
+                </span>
               </div>
-            ))}
-          </div>
-          <div className="second-col md:w-1/2">
-            {lineArray
-              .slice(Math.ceil(lineArray.length / 2), lineArray.length)
-              .map((ele) => (
-                <div className="m-4">
-                  <div className="label flex flex-row justify-between">
-                    <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
-                      {ele.name}
-                    </span>
-                    <span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
-                      {ele.score + "%"}
-                    </span>
-                  </div>
-                  <progress
-                    className="progress progress-info w-100"
-                    value={ele.score}
-                    max="100"
-                  ></progress>
-                </div>
-              ))}
-          </div>
+              <progress
+                className="progress progress-info w-100"
+                value={ele.score}
+                max="100"
+              ></progress>
+            </div>
+          ))}
         </div>
       </div>
     </div>
