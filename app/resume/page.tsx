@@ -188,13 +188,11 @@ const lineArray = [
 
 const Resume = () => {
   return (
-    <div className="relative pb-16 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
-      <Navigation />
-      {/* experiences section */}
-      <div className="p-4 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="head flex justify-between">
-          <div className="max-w-2xl mx-auto lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+    <div className="relative pb-16 mt-12">
+      <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+        <div className="head flex justify-between items-center">
+          <div className="max-w-2xl lg:mx-0">
+            <h2 className="text-md md:text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
               Experiences
             </h2>
           </div>
@@ -203,9 +201,9 @@ const Resume = () => {
               href="https://drive.google.com/uc?export=download&id=12Im6giL7hD3aqVeHjjfu5k1wdx5O6lYx"
               target="_blank"
             >
-              <div className="download flex space-x-2">
+              <div className="download flex justify-center items-center space-x-2">
                 <Download size="22" color="black" />
-                <span>MY RESUME</span>
+                <span className="text-xs md:text-base">MY RESUME</span>
               </div>
             </Link>
           </button>
