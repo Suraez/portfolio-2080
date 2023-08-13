@@ -103,7 +103,7 @@ const academicRecord = [
 ];
 const cardData = {
   years: "May 2022 - Present",
-  title: "Associate Software Engineer",
+  title: "Software Engineer",
   location: "LIS Nepal Pvt. Ltd. Manbhawan, Kathmandu, Nepal",
   responsilities: [
     "Looking over the requirement and feasibility analysis of the software products - Project Management System(PMS) and Resource Planning System (RPS).",
