@@ -51,7 +51,7 @@ const AcademicCard = (academicDetails: any) => {
           {academicDetails.academicDetails.name}
         </h4>
         <h4 className="list-disc mt-4 text-sm md:text-lg animate-fade-in-up text-center md:text-left">
-          Grade: {academicDetails.academicDetails.grade} / 100%
+          Grade: {academicDetails.index !== 0 ? (academicDetails.academicDetails.grade + academicDetails.index + "/ 100%" ) : '-'} 
         </h4>
       </div>
     </div>
@@ -83,10 +83,16 @@ const AwardRecord = (awardDetails: any) => {
 
 const academicRecord = [
   {
-    year: "2015-2016",
-    board: "School Of Leaving Certificate(S.L.C.)",
-    name: "New Modern Higher Secondary School, Jaleshwor-5, Nepal",
-    grade: "81.625%",
+    year: "2023-Present",
+    board: "Doctor of Philosophy - PhD in Computer Science",
+    name: "New Jersey Institute of Technology",
+    grade: "0%"
+  },
+    {
+    year: "2018-2022",
+    board: "Bachelor of Engineering in Computer Science",
+    name: "Tribhuwan University",
+    grade: "81.4%",
   },
   {
     year: "2016-2018",
@@ -95,14 +101,14 @@ const academicRecord = [
     grade: "85.20%",
   },
   {
-    year: "2018-2022",
-    board: "Bachelor of Engineering in Computer Science",
-    name: "Tribhuwan University",
-    grade: "81.4%",
-  },
+    year: "2015-2016",
+    board: "School Of Leaving Certificate(S.L.C.)",
+    name: "New Modern Higher Secondary School, Jaleshwor-5, Nepal",
+    grade: "81.625%",
+  }
 ];
 const cardData = {
-  years: "May 2022 - Present",
+  years: "May 2022 - Dec 2023",
   title: "Software Engineer",
   location: "LIS Nepal Pvt. Ltd. Manbhawan, Kathmandu, Nepal",
   responsilities: [
@@ -224,12 +230,12 @@ const Resume = () => {
           </FadeInSection>
         </div>
         <hr />
-        {academicRecord.map((record) => {
+        {academicRecord.map((record, index) => {
           return (
             <div className="mt-4" key={record.name}>
               <FadeInSection>
                 <Card>
-                  <AcademicCard academicDetails={record} />;
+                  <AcademicCard academicDetails={record} index={index}/>
                 </Card>
               </FadeInSection>
             </div>
@@ -250,7 +256,7 @@ const Resume = () => {
             <FadeInSection key={record.achievement}>
               <div className="mt-4" key={record.achievement}>
                 <Card>
-                  <AwardRecord awardDetails={record} />;
+                  <AwardRecord awardDetails={record} />
                 </Card>
               </div>
             </FadeInSection>

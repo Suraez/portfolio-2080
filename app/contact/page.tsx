@@ -36,7 +36,6 @@ export default function Example() {
       message: "",
     },
     onSubmit: async (values) => {
-      console.log("🚀 ~ file: page.tsx:37 ~ onSubmit: ~ values:", values);
       const resposne = await axios.post(
         "https://eo9rwe7f8duqbqi.m.pipedream.net",
         values
@@ -117,6 +116,7 @@ export default function Example() {
                   href={s.href}
                   target="_blank"
                   className="p-4 relative flex flex-col gap-4 duration-700  animate-fade-in-up"
+                  key={s.href}
                 >
                   <span
                     className="absolute w-px bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
