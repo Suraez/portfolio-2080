@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
-import Photo from "../public/may-2024.jpg";
+import Photo from "../public/profile.jpg";
 import Image from "next/image";
 
 const navigation = [
