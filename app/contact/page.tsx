@@ -14,12 +14,6 @@ const socials = [
     handle: "ojhasuraj01@gmail.com",
   },
   {
-    icon: <PhoneCall size={20} />,
-    href: "tel:+977-9864421474",
-    label: "Phone Number",
-    handle: "+977-9864421474",
-  },
-  {
     icon: <Github size={20} />,
     href: "https://github.com/Suraez",
     label: "Github",

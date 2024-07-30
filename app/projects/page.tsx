@@ -75,7 +75,7 @@ export default async function ProjectsPage() {
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           {projectData.map((project) => {
             return (
-              <FadeInSection>
+              <FadeInSection key={project.id}>
                 <Card key={project.id}>
                   <Link href={`/projects/${project.id}`}>
                     <div className="flex-col space-y-3 relative h-full w-full p-4 md:p-8">
