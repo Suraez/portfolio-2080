@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-screen md:h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black md:p-12">
       <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center md:justify-end xs:justify-center gap-4 pr-4">
+        <ul className="flex items-center justify-center gap-4 pr-4">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -47,33 +47,43 @@ export default function Home() {
             Just A Tech Enthusiast who is very enthusiastic about various nascent
             technologies that are changing millions of lives.
           </h2>
-           <div className="flex"><Mail className="mr-1 mt-1" size={15} />so299@njit.edu</div>  
-           <div className="flex"><Github className="mr-1 mt-1" size={15} />https://github.com/Suraez</div>
+          <h5 className="flex text-sm text-zinc-500">
+            <Mail className="mr-1 mt-1" size={15} />
+            so299@njit.edu
+          </h5>
+          <h5 className="flex text-sm text-zinc-500">
+            <Github className="mr-1 mt-1" size={15} />
+            https://github.com/Suraez
+          </h5>
         </div>
         <div className="right-col md:columns-xl">
           <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-          <div className="my-2 animate-fade-in">
-            <h3>Publications</h3>
+          <div className="my-2 animate-fade-in p-4">
+            <h2 className="text-xl">Publications</h2>
             <hr />
             <div className="md:flex justify-around">
               <div className="pub flex flex-col md:justify-around items-center">
                 <Image src={Pub1} alt="Publication 1" height={250} width={250} />
-                  <ul>
-                    <li><h4>Theory of Computation</h4></li>
-                    <li>Publisher: GL Books House Pvt. Ltd</li>
-                    <li>Published Year: 2019</li>
-                    <li>Co-author: Professor Urbara Bhandari</li>
-                  </ul>
+                <ul>
+                  <li>
+                    <h4>Theory of Computation</h4>
+                  </li>
+                  <li>Publisher: GL Books House Pvt. Ltd</li>
+                  <li>Published Year: 2019</li>
+                  <li>Co-author: Professor Urbara Bhandari</li>
+                </ul>
               </div>
 
               <div className="pub flex flex-col md:justify-around items-center">
                 <Image src={Pub2} alt="Publication 2" height={250} width={250} />
-                  <ul>
-                    <li><h3>Discrete Structure</h3></li>
-                    <li>Publisher: GL Books House Pvt. Ltd</li>
-                    <li>Published Year: 2021</li>
-                    <li>Co-author: Professor Ramesh Thapa</li>
-                  </ul>
+                <ul>
+                  <li>
+                    <h3>Discrete Structure</h3>
+                  </li>
+                  <li>Publisher: GL Books House Pvt. Ltd</li>
+                  <li>Published Year: 2021</li>
+                  <li>Co-author: Professor Ramesh Thapa</li>
+                </ul>
               </div>
             </div>
           </div>
