@@ -5,7 +5,7 @@ import Photo from "../public/profile.jpg";
 import Pub1 from "../public/pub1.png";
 import Pub2 from "../public/pub2.png";
 import Image from "next/image";
-import {Mail, Github} from "lucide-react"
+import {Mail, Github, Youtube} from "lucide-react"
 const navigation = [
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/resume" },
@@ -55,6 +55,18 @@ export default function Home() {
             <Github className="mr-1 mt-1" size={15} />
             https://github.com/Suraez
           </h5>
+          <button
+            type="button"
+            className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 mt-2"
+          >
+            <Link href="https://www.youtube.com/@surajoberai" className="flex">
+              <Youtube className="mr-1 mt-1" size={15} />
+              My YouTube Channel
+            </Link>
+          </button>
+          <h2 className="text-sm text-center md:text-base text-zinc-500">
+            Please consider subscribing it! :)
+          </h2>
         </div>
         <div className="right-col md:columns-xl">
           <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
