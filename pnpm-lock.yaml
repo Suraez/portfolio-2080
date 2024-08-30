@@ -115,7 +115,7 @@ importers:
         version: 5.0.2
     devDependencies:
       '@opentelemetry/api':
-        specifier: ^1.4.1
+        specifier: ^1.2.0
         version: 1.4.1
       '@tailwindcss/line-clamp':
         specifier: ^0.4.2
