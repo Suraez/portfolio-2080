@@ -4,10 +4,8 @@ import { useState } from "react";
 
 const Editor = dynamic(() => import("../components/editor"), { ssr: false });
 
-const page = () => {
-
+const page = async() => {
   const [data, setData] = useState('');
-
   return (
     <div>
       <Editor value={data} onChange={setData} holder="editorjs-container" />
