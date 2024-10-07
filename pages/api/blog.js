@@ -4,9 +4,9 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       const client = await clientPromise;
-      const db = client.db();
-      const users = await db.collection('users').find({}).toArray();
-      res.status(200).json({ users });
+      const db = client.db("blog");
+      const blogs = await db.collection('blogs').find({}).toArray();
+      res.status(200).json({ blogs });
     } catch (error) {
       console.error('MongoDB connection error', error);
       res.status(500).json({ error: 'Failed to fetch users' });

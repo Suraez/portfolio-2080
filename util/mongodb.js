@@ -5,15 +5,12 @@ let client;
 let clientPromise;
 
 
-console.log(uri);
-
 if (!uri) {
   throw new Error('Please add your MongoDB URI to .env.local');
 }
 
 if (process.env.NODE_ENV === 'development') {
   // Use a global variable in development to avoid creating multiple connections
-  console.log("connecting to the DB...");
   if (!global._mongoClientPromise) {
     client = new MongoClient(uri);
     global._mongoClientPromise = client.connect();
