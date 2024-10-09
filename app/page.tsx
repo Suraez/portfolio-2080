@@ -82,7 +82,7 @@ export default function Home() {
                   </li>
                   <li>Publisher: GL Books House Pvt. Ltd</li>
                   <li>Published Year: 2019</li>
-                  <li>Co-author: Professor Urbara Bhandari</li>
+                  <li>Co-author: Prof. Urbara Bhandari</li>
                 </ul>
               </div>
 
@@ -94,7 +94,7 @@ export default function Home() {
                   </li>
                   <li>Publisher: GL Books House Pvt. Ltd</li>
                   <li>Published Year: 2021</li>
-                  <li>Co-author: Professor Ramesh Thapa</li>
+                  <li>Co-author: Prof Ramesh Thapa</li>
                 </ul>
               </div>
             </div>
