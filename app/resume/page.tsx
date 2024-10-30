@@ -204,7 +204,7 @@ const Resume = () => {
           </div>
           <button className="bg-info py-2 px-4 text-black">
             <Link
-              href="https://drive.google.com/uc?export=download&id=12Im6giL7hD3aqVeHjjfu5k1wdx5O6lYx"
+              href="https://drive.google.com/file/d/1TLrvuKKTloJhdzERmuSmbsDebor_bIw3/view?usp=sharing"
               target="_blank"
             >
               <div className="download flex justify-center items-center space-x-2">

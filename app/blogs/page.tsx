@@ -56,15 +56,15 @@ export default function Example() {
             <div className="flex justify-center">
               <h3 className="text-2xl">Stay Tuned!</h3>
               <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-                <div className="mx-auto lg:mx-0 animate-fade-in-up">
+                {/* <div className="mx-auto lg:mx-0 animate-fade-in-up">
                   <FadeInSection>
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
                       Blogs
                     </h2>
                   </FadeInSection>
-                </div>
+                </div> */}
                 <hr />
-                {blogs.map((record, index) => {
+                {/* {blogs.map((record, index) => {
                   return (
                     <div className="mt-4" key={record.title}>
                       <FadeInSection>
@@ -74,7 +74,7 @@ export default function Example() {
                       </FadeInSection>
                     </div>
                   );
-                })}
+                })} */}
               </div>
             </div>
           </div>
