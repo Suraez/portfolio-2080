@@ -44,17 +44,24 @@ export default function Home() {
             {`< Suraj Kr Ojha />`}
           </h2>
           <h2 className="text-sm text-center md:text-base text-zinc-500 mt-2">
-            Just A Tech Enthusiast who is very enthusiastic about various nascent
-            technologies that are changing millions of lives.
+            <i>TL;DR</i> I am a CS PhD student at NJIT, being supervised by the <a href="https://people.njit.edu/profile/dingxn">Professor
+            Xiaoning Ding</a> , and a Professor Zhihao Yao. I am currently working in Cloud
+            Computing, specifically, focusing on reducing latency in Serverless
+            Architecture.
           </h2>
-          <h5 className="flex text-sm text-zinc-500">
-            <Mail className="mr-1 mt-1" size={15} />
-            so299@njit.edu
-          </h5>
-          <h5 className="flex text-sm text-zinc-500">
-            <Github className="mr-1 mt-1" size={15} />
-            https://github.com/Suraez
-          </h5>
+          <a href="mailto:so299@njit.edu">
+            <h5 className="flex text-sm text-zinc-500 hover:text-zinc-300">
+              <Mail className="mr-1 mt-1" size={15} />
+              so299@njit.edu
+            </h5>
+          </a>
+          <a href="https://github.com/Suraez" target="_blank">
+            <h5 className="flex text-sm text-zinc-500  hover:text-zinc-300">
+              <Github className="mr-1 mt-1" size={15} />
+              https://github.com/Suraez
+            </h5>
+          </a>
+
           <button
             type="button"
             className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 mt-2"
