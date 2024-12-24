@@ -9,6 +9,7 @@ const navItems = [
   { name: "Projects", link: "/projects" },
   { name: "Contact", link: "/contact" },
   { name: "Resume", link: "/resume" },
+  { name: "Blogs", link: "/blogs" },
 ];
 
 export const Navigation: React.FC = () => {
