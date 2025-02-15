@@ -44,8 +44,7 @@ export default function Home() {
             {`< Suraj Kr Ojha />`}
           </h2>
           <h2 className="text-sm text-center md:text-base text-zinc-500 mt-2">
-            <i>TL;DR</i> I am a CS PhD student at NJIT, being supervised by the <a href="https://people.njit.edu/profile/dingxn">Professor
-            Xiaoning Ding</a> , and a Professor Zhihao Yao. I am currently working in Cloud
+            <i>TL;DR</i> I am a CS PhD student at NJIT. I am currently working in Cloud
             Computing, specifically, focusing on reducing latency in Serverless
             Architecture.
           </h2>
